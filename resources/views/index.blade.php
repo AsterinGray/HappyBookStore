@@ -1,8 +1,9 @@
 @extends('layout')
+@section('heading', "Book List")
 @section('main')
     <table class="table">
         <thead>
-        <tr>
+        <tr class="table-dark color-light">
             <th scope="col">#</th>
             <th scope="col">Title</th>
             <th scope="col">Author</th>
