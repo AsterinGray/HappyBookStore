@@ -18,9 +18,8 @@ class CategoryController extends Controller
     public function index($id)
     {
         $categories = Category::get();
-        $title = Category::where('id', $id)->first()->category;
-        $books = Book::where('category_id', $id)->get();
-        return view('category', compact('books', 'categories', 'title'));
+        $category = Category::where('id', $id)->first();
+        return view('category', compact('categories', 'category'));
     }
 
     public function categories()

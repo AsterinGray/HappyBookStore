@@ -24,8 +24,8 @@
                     Category
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    @foreach ($categories as $category)
-                        <li><a class="dropdown-item" href="/category/{{$category->id}}">{{$category->category}}</a></li>
+                    @foreach ($categories as $c)
+                        <li><a class="dropdown-item" href="/category/{{$c->id}}">{{$c->category}}</a></li>
                     @endforeach
                 </ul>
                 </li>              
@@ -38,7 +38,7 @@
     </nav>
     <section>
         <div class="container">
-            <h1>{{$title}}</h1>
+            <h1>{{$category->category}}</h1>
             <div class="row">
                 <div class="col-10">
                     <table class="table">
@@ -50,8 +50,8 @@
                         </tr>
                         </thead>
                         <tbody>
-                            @if (count($books) > 0)
-                                @foreach ($books as $book)
+                            @if (count($category->books) > 0)
+                                @foreach ($category->books as $book)
                                     <tr>
                                         <th scope="row">{{$loop->index + 1}}</th>
                                         <td><a href="/book/{{$book->id}}">{{$book->title}}</a></td>
