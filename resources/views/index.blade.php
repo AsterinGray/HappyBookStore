@@ -3,7 +3,7 @@
 @section('main')
     <table class="table">
         <thead>
-        <tr class="table-dark color-light">
+        <tr>
             <th scope="col">#</th>
             <th scope="col">Title</th>
             <th scope="col">Author</th>
@@ -13,10 +13,18 @@
             @foreach ($books as $book)
                 <tr>
                     <th scope="row">{{$loop->index + 1}}</th>
-                    <td><a href="/book/{{$book->id}}">{{$book->title}}</a></td>
+                    <td>
+                        <a 
+                            class="text-decoration-none fw-bold text-dark"
+                            href="/book/{{$book->id}}"
+                        >
+                            {{$book->title}}
+                        </a>
+                    </td>
                     <td>{{$book->detail->author}}</td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+    {{$books->links()}}
 @endsection
