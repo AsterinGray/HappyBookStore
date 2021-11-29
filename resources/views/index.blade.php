@@ -12,7 +12,7 @@
         <tbody>
             @foreach ($books as $book)
                 <tr>
-                    <th scope="row">{{$loop->index + 1}}</th>
+                    <th scope="row">{{$book->id}}</th>
                     <td>
                         <a 
                             class="text-decoration-none fw-bold text-dark"
